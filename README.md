@@ -1,1 +1,0 @@
-# kijani-blog-theme
