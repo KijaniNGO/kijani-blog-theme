@@ -366,8 +366,7 @@ header {
     @media screen and (max-width: 480px) {
       header .top-bar {
         top: -352px; } }
-  header .hero-img background
-  .default-back {
+  header .hero-img .default-back {
     width: 100%;
     height: 100%;
     max-width: 1920px;
