@@ -12,12 +12,15 @@ get_header(); ?>
             <?php /* Start the Loop */ ?>
             <?php while ( have_posts() ) : the_post(); ?>
                 <?php get_template_part( 'content', 'single' ); ?>
+            <?php endwhile; // end of the loop. ?>
             
             <?php get_template_part( 'aside' ); ?>
+            <?php 
+            get_template_part( 'comments' ); 
+            // comments_template();  // use this line to include social plugin
+            ?> 
             
-            <?php //comments_template(); ?> 
             
-            <?php endwhile; // end of the loop. ?>
         </div>
     </main>
 
