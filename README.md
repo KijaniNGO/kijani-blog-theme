@@ -18,6 +18,18 @@ The styles are written in Sass. Grunt is included for running Autoprefixer (enab
 1. Run `npm install` once to install dependencies.
 2. Use `grunt` to prefix, sass compile and minify, or `grunt watch` to automatically compile on save.
 
+#### Releasing
+
+To release a stable version just create a new release (GitHub Page > Releases > Draft a new Release > Publish release).
+You have to fill a version number like `v1.1.2`. To choose the correct version number follow the basic rules: Given a version number MAJOR.MINOR.PATCH, increment the:
+
+    MAJOR version when you make fundamental changes in website design and structure such that users who visited your site earlier will have to reorientate
+    MINOR version when you add a functionality/feature which brings changes to the user experience of the website
+    PATCH version when you make bug fixes without any new features (except the feature that the site is working again)
+
+(You can find more details [here](http://semver.org/))
+Once you created a release it will deployed to blog.kijani.co in seconds, so be careful when releasing to production.
+
 ## Todos
 - [x] ~~Implement Basic Article Style~~
 - [x] ~~Fix Heading and Hero Image~~
@@ -38,4 +50,4 @@ The styles are written in Sass. Grunt is included for running Autoprefixer (enab
 - [ ] Add Footer
 - [ ] Add Social Media to Archive Page
 
-![Screemshot](screenshot.png)
+![Screenshot](screenshot.png)
