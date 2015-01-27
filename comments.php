@@ -3,7 +3,8 @@
 <section id="comments" style="float:left;">
         <?php 
         $args = array(
-            'id_form' => 'comment-form'
+            'id_form' => 'comment-form',
+            'comment_notes_after' => ''
         );
         comment_form($args); 
         ?>
