@@ -9,6 +9,7 @@ function reorderComments() {
 }
 
 jQuery(document).ready(function($){
+	$(".cptch_input").replaceWith('<input id="cptch_input" type="number" autocomplete="off" name="cptch_number" required="required" placeholder="?" maxlength="1" size="1">');
 	reorderComments();
 	$(window).resize(reorderComments);
 	$(".post-area").slideUp();

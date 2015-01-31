@@ -81,7 +81,7 @@ main {
 	}
 }
 
-article, .comment-area, .post-area {
+article, .comment-area, .post-area, .comment-body {
 	width: 100%;
 	font-size: $em;
 	max-width: 44*$em;
@@ -468,7 +468,7 @@ article, .comment-area, .post-area {
 		margin: 0;
 		padding: 0;
 		li {
-			article {
+			.comment-body {
 				border-radius: 0.5*$em;
 				position: relative;
 				margin-top: 2*$em;
