@@ -34,9 +34,7 @@ function shorten_str($str, $length = 80, $suffix = ' ...') {
 
     return $str;
 }
-?>
 
-<?php
 function mytheme_comment($comment) {
 	$GLOBALS['comment'] = $comment; ?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID()?>">

@@ -436,6 +436,7 @@ article, .comment-area, .post-area, .comment-body {
 					margin-right: 0.1*$em;
 					width: 2*$em;
 					text-align: center;
+					-moz-appearance:textfield;
 					&::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
 					  -webkit-appearance: none;
 					  margin: 0;
@@ -481,8 +482,13 @@ article, .comment-area, .post-area, .comment-body {
 				position: relative;
 				margin-top: 1.5*$em;
 				padding-bottom: 1*$em;
-				@media screen and (max-width: 700px) {
+				@media screen and (max-width: 720px) {
 					padding-top: -1px;
+					p {
+						margin: 0.5*$em 0 0.5*$em 0.5*$em;
+					}
+				}
+				@media screen and (max-width: 520px) {
 					p {
 						margin: 0.5*$em 0;
 					}

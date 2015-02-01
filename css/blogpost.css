@@ -783,7 +783,8 @@ article, .comment-area, .post-area, .comment-body {
       padding-left: 9.6px;
       margin-right: 1.6px;
       width: 32px;
-      text-align: center; }
+      text-align: center;
+      -moz-appearance: textfield; }
       #comments form .post-area input[type="number"]::-webkit-inner-spin-button, #comments form .post-area input[type="number"]::-webkit-outer-spin-button {
         -webkit-appearance: none;
         margin: 0; }
@@ -831,11 +832,14 @@ article, .comment-area, .post-area, .comment-body {
     position: relative;
     margin-top: 24px;
     padding-bottom: 16px; }
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 720px) {
       #comments ol li article, #comments ol li .comment-body {
         padding-top: -1px; }
         #comments ol li article p, #comments ol li .comment-body p {
-          margin: 8px 0; } }
+          margin: 8px 0 8px 8px; } }
+    @media screen and (max-width: 520px) {
+      #comments ol li article p, #comments ol li .comment-body p {
+        margin: 8px 0; } }
     #comments ol li article .avatar-default, #comments ol li .comment-body .avatar-default {
       display: none; }
     #comments ol li article figure, #comments ol li .comment-body figure {
