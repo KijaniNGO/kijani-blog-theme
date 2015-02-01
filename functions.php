@@ -2,12 +2,12 @@
 /**
  * functions and definitions
  *
- * 
+ *
  */
 
 add_theme_support( 'post-thumbnails' );
 
-/** 
+/**
  * Markdown Image Manipulation
  */
 add_filter( 'image_send_to_editor', 'markdown_insert_image', 10, 8 );
@@ -34,3 +34,31 @@ function shorten_str($str, $length = 80, $suffix = ' ...') {
 
     return $str;
 }
+?>
+
+<?php
+function mytheme_comment($comment) {
+	$GLOBALS['comment'] = $comment; ?>
+	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID()?>">
+		<article id="comment-<?php comment_ID(); ?>" class="comment-body">
+			<div class="comment-content">
+				<?php comment_text() ?>
+			</div>
+			<div class="comment-details">
+				<figure class="green-overlay">
+					<?php echo get_avatar($comment,$size='48',$default='<path_to_url>' ); ?>
+				</figure>
+				<ul class="comment-meta">
+					<li class="comment-author">
+						<?php echo get_comment_author_link() ?>
+					</li>
+					<li class="comment-time">
+						<?php printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?>
+					</li>
+				</ul>
+			</div>
+		</article>
+	</li>
+<?php
+        }
+?>

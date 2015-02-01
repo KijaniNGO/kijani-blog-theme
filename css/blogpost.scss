@@ -406,6 +406,10 @@ article, .comment-area, .post-area, .comment-body {
 					@media screen and (max-width: 600px) {
 						width: 60%;
 					}
+					@media screen and (max-width: 500px) {
+						width: 100%;
+						margin: 0*$em 0 0.5*$em 0;
+					}
 				}
 			}
 			input {
@@ -420,6 +424,10 @@ article, .comment-area, .post-area, .comment-body {
 					padding: 0 0.5*$em;
 					border-radius: 0.25*$em;
 					box-sizing: border-box;
+					@media screen and (max-width: 500px) {
+						width: 90%;
+						margin-bottom: 0.5*$em;
+					}
 				}
 				&[type="number"] {
 					margin: 0;
@@ -468,21 +476,31 @@ article, .comment-area, .post-area, .comment-body {
 		margin: 0;
 		padding: 0;
 		li {
-			.comment-body {
+			article, .comment-body {
 				border-radius: 0.5*$em;
 				position: relative;
-				margin-top: 2*$em;
+				margin-top: 1.5*$em;
 				padding-bottom: 1*$em;
+				@media screen and (max-width: 700px) {
+					padding-top: -1px;
+					p {
+						margin: 0.5*$em 0;
+					}
+				}
+				.avatar-default {
+					display: none;
+				}
 				figure {
 					position: absolute;
-					bottom: -2.8*$em;
-					left: -0.6*$em;
+					bottom: -1.5*$em;
+					left: -4*$em;
 					float: left;
-					width: 6*$em;
-					height: 6*$em;
+					width: auto;
 					border-radius: 100%;
 					box-shadow: 0 0 1px rgba($dust,0.1);
 					img {
+						width: 4*$em;
+						height: 4*$em;
 						border-radius: 100%;
 						-webkit-filter: brightness(1.1) contrast(1.2) grayscale(1);
 						-webkit-filter: brightness(110%) contrast(120%) grayscale(100%);
@@ -491,11 +509,26 @@ article, .comment-area, .post-area, .comment-body {
 						filter: brightness(110%) contrast(120%) grayscale(100%);
 						filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
 					}
-					@media screen and (max-width: 780px) {
-						margin-left: -5*$em;
+					@media screen and (max-width: 700px) {
+						left: -3*$em;
+						img {
+							width: 3.5*$em;
+							height: 3.5*$em;
+						}
+					}
+					@media screen and (max-width: 600px) {
+						left: -2.5*$em;
+					}
+					@media screen and (max-width: 520px) {
+						left: -0.5*$em;
+						bottom: -2*$em;
+						img {
+							width: 3*$em;
+							height: 3*$em;
+						}
 					}
 				}
-				.comment-details {
+				.comment-details, .vcard {
 					border-top: 1px solid $green2;
 					position: relative;
 					ul {
@@ -515,8 +548,21 @@ article, .comment-area, .post-area, .comment-body {
 								font-size: 0.8*$em;
 								margin-left: 0.1*$em;
 							}
-							&:first-child::before {
-								content: "";
+							&:first-child {
+								margin-left: -1*$em;
+								&::before {
+									content: "";
+								}
+								@media screen and (max-width: 600px) {
+									margin-left: 0;
+								}
+							}
+							@media screen and (max-width: 400px) {
+								font-size: 0.6*$em;
+								margin-right: 1*$em;
+								&::before {
+									margin-left: 0.35*$em;
+								}
 							}
 							a {
 								color: inherit;
@@ -525,6 +571,9 @@ article, .comment-area, .post-area, .comment-body {
 								text-shadow: none;
 							}
 						}
+					}
+					@media screen and (max-width: 520px) {
+						margin-bottom: -0.5*$em;
 					}
 				}
 			}

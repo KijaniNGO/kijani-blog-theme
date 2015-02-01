@@ -1,4 +1,5 @@
 <section id="comments">
+
     <form action=<?php echo get_site_url().'/wp-comments-post.php'; ?> method="post" id="comment-form">
         <p class="comment-area">
             <textarea id="comment" name="comment" required="required" rows="1" placeholder="Write a comment..."></textarea>
@@ -25,14 +26,18 @@
     </form>
 
     <ol class="commentlist">
-            <?php
-            $comments_query = array(
-                'post_id'=> $post->ID
-            );
-            $comments = get_comments($comments_query);
+        <?php
+        $comments_query = array(
+            'post_id'=> $post->ID
+        );
+        $comments = get_comments($comments_query);
 
-            $options = array( 'style' => 'ol' );
-            wp_list_comments($options, $comments);
-            ?>
+        $options = array(
+            'avatar_size' => 56,
+            'style' => 'ol'
+        );
+        wp_list_comments('type=comment&callback=mytheme_comment', $comments);
+        // wp_list_comments($options, $comments);
+        ?>
     </ol>
 </section>

@@ -757,6 +757,10 @@ article, .comment-area, .post-area, .comment-body {
       @media screen and (max-width: 600px) {
         #comments form .post-area p.captcha {
           width: 60%; } }
+      @media screen and (max-width: 500px) {
+        #comments form .post-area p.captcha {
+          width: 100%;
+          margin: 0px 0 8px 0; } }
   #comments form .post-area input {
     font-family: "bree", "Ubuntu Condensed", "Futura", sans-serif;
     font-weight: 300;
@@ -769,6 +773,10 @@ article, .comment-area, .post-area, .comment-body {
       padding: 0 8px;
       border-radius: 4px;
       box-sizing: border-box; }
+      @media screen and (max-width: 500px) {
+        #comments form .post-area input[type="text"], #comments form .post-area input[type="email"], #comments form .post-area input[type="number"] {
+          width: 90%;
+          margin-bottom: 8px; } }
     #comments form .post-area input[type="number"] {
       margin: 0;
       margin-top: 4.8px;
@@ -818,21 +826,29 @@ article, .comment-area, .post-area, .comment-body {
   width: 100%;
   margin: 0;
   padding: 0; }
-  #comments ol li .comment-body {
+  #comments ol li article, #comments ol li .comment-body {
     border-radius: 8px;
     position: relative;
-    margin-top: 32px;
+    margin-top: 24px;
     padding-bottom: 16px; }
-    #comments ol li .comment-body figure {
+    @media screen and (max-width: 700px) {
+      #comments ol li article, #comments ol li .comment-body {
+        padding-top: -1px; }
+        #comments ol li article p, #comments ol li .comment-body p {
+          margin: 8px 0; } }
+    #comments ol li article .avatar-default, #comments ol li .comment-body .avatar-default {
+      display: none; }
+    #comments ol li article figure, #comments ol li .comment-body figure {
       position: absolute;
-      bottom: -44.8px;
-      left: -9.6px;
+      bottom: -24px;
+      left: -64px;
       float: left;
-      width: 96px;
-      height: 96px;
+      width: auto;
       border-radius: 100%;
       box-shadow: 0 0 1px rgba(147, 130, 125, 0.1); }
-      #comments ol li .comment-body figure img {
+      #comments ol li article figure img, #comments ol li .comment-body figure img {
+        width: 64px;
+        height: 64px;
         border-radius: 100%;
         -webkit-filter: brightness(1.1) contrast(1.2) grayscale(1);
         -webkit-filter: brightness(110%) contrast(120%) grayscale(100%);
@@ -841,35 +857,62 @@ article, .comment-area, .post-area, .comment-body {
         -webkit-filter: brightness(110%) contrast(120%) grayscale(100%);
                 filter: brightness(110%) contrast(120%) grayscale(100%);
         filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale"); }
-      @media screen and (max-width: 780px) {
-        #comments ol li .comment-body figure {
-          margin-left: -80px; } }
-    #comments ol li .comment-body .comment-details {
+      @media screen and (max-width: 700px) {
+        #comments ol li article figure, #comments ol li .comment-body figure {
+          left: -48px; }
+          #comments ol li article figure img, #comments ol li .comment-body figure img {
+            width: 56px;
+            height: 56px; } }
+      @media screen and (max-width: 600px) {
+        #comments ol li article figure, #comments ol li .comment-body figure {
+          left: -40px; } }
+      @media screen and (max-width: 520px) {
+        #comments ol li article figure, #comments ol li .comment-body figure {
+          left: -8px;
+          bottom: -32px; }
+          #comments ol li article figure img, #comments ol li .comment-body figure img {
+            width: 48px;
+            height: 48px; } }
+    #comments ol li article .comment-details, #comments ol li article .vcard, #comments ol li .comment-body .comment-details, #comments ol li .comment-body .vcard {
       border-top: 1px solid #6dac6e;
       position: relative; }
-      #comments ol li .comment-body .comment-details ul {
+      #comments ol li article .comment-details ul, #comments ol li article .vcard ul, #comments ol li .comment-body .comment-details ul, #comments ol li .comment-body .vcard ul {
         list-style-type: none;
         padding: 0 0 0 32px; }
-        #comments ol li .comment-body .comment-details ul li {
+        #comments ol li article .comment-details ul li, #comments ol li article .vcard ul li, #comments ol li .comment-body .comment-details ul li, #comments ol li .comment-body .vcard ul li {
           display: inline-block;
           font-family: "bree", "Ubuntu Condensed", "Futura", sans-serif;
           font-weight: 300;
           font-size: 12.8px;
           color: #6dac6e;
           margin-right: 24px; }
-          #comments ol li .comment-body .comment-details ul li::before {
+          #comments ol li article .comment-details ul li::before, #comments ol li article .vcard ul li::before, #comments ol li .comment-body .comment-details ul li::before, #comments ol li .comment-body .vcard ul li::before {
             content: "\2013";
             font-family: "bree", "Ubuntu Condensed", "Futura", sans-serif;
             font-weight: 300;
             font-size: 12.8px;
             margin-left: 1.6px; }
-          #comments ol li .comment-body .comment-details ul li:first-child::before {
-            content: ""; }
-          #comments ol li .comment-body .comment-details ul li a {
+          #comments ol li article .comment-details ul li:first-child, #comments ol li article .vcard ul li:first-child, #comments ol li .comment-body .comment-details ul li:first-child, #comments ol li .comment-body .vcard ul li:first-child {
+            margin-left: -16px; }
+            #comments ol li article .comment-details ul li:first-child::before, #comments ol li article .vcard ul li:first-child::before, #comments ol li .comment-body .comment-details ul li:first-child::before, #comments ol li .comment-body .vcard ul li:first-child::before {
+              content: ""; }
+            @media screen and (max-width: 600px) {
+              #comments ol li article .comment-details ul li:first-child, #comments ol li article .vcard ul li:first-child, #comments ol li .comment-body .comment-details ul li:first-child, #comments ol li .comment-body .vcard ul li:first-child {
+                margin-left: 0; } }
+          @media screen and (max-width: 400px) {
+            #comments ol li article .comment-details ul li, #comments ol li article .vcard ul li, #comments ol li .comment-body .comment-details ul li, #comments ol li .comment-body .vcard ul li {
+              font-size: 9.6px;
+              margin-right: 16px; }
+              #comments ol li article .comment-details ul li::before, #comments ol li article .vcard ul li::before, #comments ol li .comment-body .comment-details ul li::before, #comments ol li .comment-body .vcard ul li::before {
+                margin-left: 5.6px; } }
+          #comments ol li article .comment-details ul li a, #comments ol li article .vcard ul li a, #comments ol li .comment-body .comment-details ul li a, #comments ol li .comment-body .vcard ul li a {
             color: inherit;
             text-decoration: none;
             background: none;
             text-shadow: none; }
+      @media screen and (max-width: 520px) {
+        #comments ol li article .comment-details, #comments ol li article .vcard, #comments ol li .comment-body .comment-details, #comments ol li .comment-body .vcard {
+          margin-bottom: -8px; } }
 @media screen and (max-width: 700px) {
   #comments {
     margin-left: 5%;
