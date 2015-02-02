@@ -46,7 +46,7 @@ Once you created a release it will deployed to blog.kijani.co in seconds, so be 
 - [x] ~~Add Navbar on Scroll Up~~
 - [x] ~~Add Citation Styles~~
 - [x] ~~Add Archive Page~~
-- [ ] Add Comments
+- [x] ~~Add Comments~~
 - [ ] Add Footer
 - [ ] Add Social Media to Archive Page
 
