@@ -666,6 +666,22 @@ article, .comment-area, .post-area, .comment-body {
       article blockquote, .comment-area blockquote, .post-area blockquote, .comment-body blockquote {
         padding-right: 32px; } }
 
+#comments form .abort-button {
+  display: block;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  background: #716d69;
+  color: #f8f9f7;
+  font-family: "bree", "Ubuntu Condensed", "Futura", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 100%;
+  box-sizing: border-box; }
 #comments form input, #comments form textarea {
   border: none;
   background: inherit;
@@ -761,6 +777,8 @@ article, .comment-area, .post-area, .comment-body {
         #comments form .post-area p.captcha {
           width: 100%;
           margin: 0px 0 8px 0; } }
+  #comments form .post-area .logged-in {
+    margin-top: 32px; }
   #comments form .post-area input {
     font-family: "bree", "Ubuntu Condensed", "Futura", sans-serif;
     font-weight: 300;
@@ -822,35 +840,40 @@ article, .comment-area, .post-area, .comment-body {
       #comments form .post-area input[type="submit"]:hover, #comments form .post-area input[type="submit"]:focus, #comments form .post-area input[type="submit"]:active {
         box-shadow: 0 2px 0 #5da35e, 0 2px 4px rgba(25, 24, 23, 0.3);
         top: 2px; }
-#comments ol {
+#comments ol, #comments ul {
   list-style-type: none;
   width: 100%;
   margin: 0;
   padding: 0; }
-  #comments ol li article, #comments ol li .comment-body {
+  #comments ol .reply-link, #comments ul .reply-link {
+    cursor: pointer; }
+    #comments ol .reply-link:hover, #comments ul .reply-link:hover {
+      text-decoration: underline; }
+  #comments ol li article, #comments ol li .comment-body, #comments ul li article, #comments ul li .comment-body {
     border-radius: 8px;
     position: relative;
     margin-top: 24px;
     padding-bottom: 16px; }
-    @media screen and (max-width: 720px) {
-      #comments ol li article, #comments ol li .comment-body {
-        padding-top: -1px; }
-        #comments ol li article p, #comments ol li .comment-body p {
-          margin: 8px 0 8px 8px; } }
-    @media screen and (max-width: 520px) {
-      #comments ol li article p, #comments ol li .comment-body p {
-        margin: 8px 0; } }
-    #comments ol li article .avatar-default, #comments ol li .comment-body .avatar-default {
+    #comments ol li article .comment-content, #comments ol li .comment-body .comment-content, #comments ul li article .comment-content, #comments ul li .comment-body .comment-content {
+      padding: 0 8px; }
+      @media screen and (max-width: 720px) {
+        #comments ol li article .comment-content, #comments ol li .comment-body .comment-content, #comments ul li article .comment-content, #comments ul li .comment-body .comment-content {
+          margin-top: -16px; } }
+      @media screen and (max-width: 520px) {
+        #comments ol li article .comment-content, #comments ol li .comment-body .comment-content, #comments ul li article .comment-content, #comments ul li .comment-body .comment-content {
+          padding: 0 16px; } }
+    #comments ol li article .avatar-default, #comments ol li .comment-body .avatar-default, #comments ul li article .avatar-default, #comments ul li .comment-body .avatar-default {
       display: none; }
-    #comments ol li article figure, #comments ol li .comment-body figure {
+    #comments ol li article figure, #comments ol li .comment-body figure, #comments ul li article figure, #comments ul li .comment-body figure {
       position: absolute;
       bottom: -24px;
       left: -64px;
       float: left;
       width: auto;
       border-radius: 100%;
-      box-shadow: 0 0 1px rgba(147, 130, 125, 0.1); }
-      #comments ol li article figure img, #comments ol li .comment-body figure img {
+      box-shadow: 0 0 1px rgba(147, 130, 125, 0.1);
+      z-index: 10; }
+      #comments ol li article figure img, #comments ol li .comment-body figure img, #comments ul li article figure img, #comments ul li .comment-body figure img {
         width: 64px;
         height: 64px;
         border-radius: 100%;
@@ -862,61 +885,107 @@ article, .comment-area, .post-area, .comment-body {
                 filter: brightness(110%) contrast(120%) grayscale(100%);
         filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale"); }
       @media screen and (max-width: 700px) {
-        #comments ol li article figure, #comments ol li .comment-body figure {
-          left: -48px; }
-          #comments ol li article figure img, #comments ol li .comment-body figure img {
-            width: 56px;
-            height: 56px; } }
+        #comments ol li article figure, #comments ol li .comment-body figure, #comments ul li article figure, #comments ul li .comment-body figure {
+          left: -52px; }
+          #comments ol li article figure img, #comments ol li .comment-body figure img, #comments ul li article figure img, #comments ul li .comment-body figure img {
+            width: 52px;
+            height: 52px; } }
       @media screen and (max-width: 600px) {
-        #comments ol li article figure, #comments ol li .comment-body figure {
-          left: -40px; } }
-      @media screen and (max-width: 520px) {
-        #comments ol li article figure, #comments ol li .comment-body figure {
-          left: -8px;
-          bottom: -32px; }
-          #comments ol li article figure img, #comments ol li .comment-body figure img {
+        #comments ol li article figure, #comments ol li .comment-body figure, #comments ul li article figure, #comments ul li .comment-body figure {
+          left: -44px; }
+          #comments ol li article figure img, #comments ol li .comment-body figure img, #comments ul li article figure img, #comments ul li .comment-body figure img {
             width: 48px;
             height: 48px; } }
-    #comments ol li article .comment-details, #comments ol li article .vcard, #comments ol li .comment-body .comment-details, #comments ol li .comment-body .vcard {
+      @media screen and (max-width: 520px) {
+        #comments ol li article figure, #comments ol li .comment-body figure, #comments ul li article figure, #comments ul li .comment-body figure {
+          left: -6.4px;
+          bottom: -32px; }
+          #comments ol li article figure img, #comments ol li .comment-body figure img, #comments ul li article figure img, #comments ul li .comment-body figure img {
+            width: 44px;
+            height: 44px; } }
+      @media screen and (max-width: 480px) {
+        #comments ol li article figure, #comments ol li .comment-body figure, #comments ul li article figure, #comments ul li .comment-body figure {
+          left: -10.4px; } }
+    #comments ol li article .comment-details, #comments ol li article .vcard, #comments ol li .comment-body .comment-details, #comments ol li .comment-body .vcard, #comments ul li article .comment-details, #comments ul li article .vcard, #comments ul li .comment-body .comment-details, #comments ul li .comment-body .vcard {
       border-top: 1px solid #6dac6e;
-      position: relative; }
-      #comments ol li article .comment-details ul, #comments ol li article .vcard ul, #comments ol li .comment-body .comment-details ul, #comments ol li .comment-body .vcard ul {
+      position: relative;
+      margin-top: -16px; }
+      #comments ol li article .comment-details ul, #comments ol li article .vcard ul, #comments ol li .comment-body .comment-details ul, #comments ol li .comment-body .vcard ul, #comments ul li article .comment-details ul, #comments ul li article .vcard ul, #comments ul li .comment-body .comment-details ul, #comments ul li .comment-body .vcard ul {
         list-style-type: none;
-        padding: 0 0 0 32px; }
-        #comments ol li article .comment-details ul li, #comments ol li article .vcard ul li, #comments ol li .comment-body .comment-details ul li, #comments ol li .comment-body .vcard ul li {
+        padding: 0 0 0 24px; }
+        #comments ol li article .comment-details ul li, #comments ol li article .vcard ul li, #comments ol li .comment-body .comment-details ul li, #comments ol li .comment-body .vcard ul li, #comments ul li article .comment-details ul li, #comments ul li article .vcard ul li, #comments ul li .comment-body .comment-details ul li, #comments ul li .comment-body .vcard ul li {
           display: inline-block;
           font-family: "bree", "Ubuntu Condensed", "Futura", sans-serif;
           font-weight: 300;
           font-size: 12.8px;
           color: #6dac6e;
           margin-right: 24px; }
-          #comments ol li article .comment-details ul li::before, #comments ol li article .vcard ul li::before, #comments ol li .comment-body .comment-details ul li::before, #comments ol li .comment-body .vcard ul li::before {
+          #comments ol li article .comment-details ul li::before, #comments ol li article .vcard ul li::before, #comments ol li .comment-body .comment-details ul li::before, #comments ol li .comment-body .vcard ul li::before, #comments ul li article .comment-details ul li::before, #comments ul li article .vcard ul li::before, #comments ul li .comment-body .comment-details ul li::before, #comments ul li .comment-body .vcard ul li::before {
             content: "\2013";
             font-family: "bree", "Ubuntu Condensed", "Futura", sans-serif;
             font-weight: 300;
             font-size: 12.8px;
             margin-left: 1.6px; }
-          #comments ol li article .comment-details ul li:first-child, #comments ol li article .vcard ul li:first-child, #comments ol li .comment-body .comment-details ul li:first-child, #comments ol li .comment-body .vcard ul li:first-child {
+          #comments ol li article .comment-details ul li:first-child, #comments ol li article .vcard ul li:first-child, #comments ol li .comment-body .comment-details ul li:first-child, #comments ol li .comment-body .vcard ul li:first-child, #comments ul li article .comment-details ul li:first-child, #comments ul li article .vcard ul li:first-child, #comments ul li .comment-body .comment-details ul li:first-child, #comments ul li .comment-body .vcard ul li:first-child {
             margin-left: -16px; }
-            #comments ol li article .comment-details ul li:first-child::before, #comments ol li article .vcard ul li:first-child::before, #comments ol li .comment-body .comment-details ul li:first-child::before, #comments ol li .comment-body .vcard ul li:first-child::before {
+            #comments ol li article .comment-details ul li:first-child::before, #comments ol li article .vcard ul li:first-child::before, #comments ol li .comment-body .comment-details ul li:first-child::before, #comments ol li .comment-body .vcard ul li:first-child::before, #comments ul li article .comment-details ul li:first-child::before, #comments ul li article .vcard ul li:first-child::before, #comments ul li .comment-body .comment-details ul li:first-child::before, #comments ul li .comment-body .vcard ul li:first-child::before {
               content: ""; }
-            @media screen and (max-width: 600px) {
-              #comments ol li article .comment-details ul li:first-child, #comments ol li article .vcard ul li:first-child, #comments ol li .comment-body .comment-details ul li:first-child, #comments ol li .comment-body .vcard ul li:first-child {
-                margin-left: 0; } }
-          @media screen and (max-width: 400px) {
-            #comments ol li article .comment-details ul li, #comments ol li article .vcard ul li, #comments ol li .comment-body .comment-details ul li, #comments ol li .comment-body .vcard ul li {
+            @media screen and (max-width: 520px) {
+              #comments ol li article .comment-details ul li:first-child, #comments ol li article .vcard ul li:first-child, #comments ol li .comment-body .comment-details ul li:first-child, #comments ol li .comment-body .vcard ul li:first-child, #comments ul li article .comment-details ul li:first-child, #comments ul li article .vcard ul li:first-child, #comments ul li .comment-body .comment-details ul li:first-child, #comments ul li .comment-body .vcard ul li:first-child {
+                margin-left: -8px; } }
+            @media screen and (max-width: 400px) {
+              #comments ol li article .comment-details ul li:first-child, #comments ol li article .vcard ul li:first-child, #comments ol li .comment-body .comment-details ul li:first-child, #comments ol li .comment-body .vcard ul li:first-child, #comments ul li article .comment-details ul li:first-child, #comments ul li article .vcard ul li:first-child, #comments ul li .comment-body .comment-details ul li:first-child, #comments ul li .comment-body .vcard ul li:first-child {
+                margin-left: 0px; } }
+          @media screen and (max-width: 420px) {
+            #comments ol li article .comment-details ul li, #comments ol li article .vcard ul li, #comments ol li .comment-body .comment-details ul li, #comments ol li .comment-body .vcard ul li, #comments ul li article .comment-details ul li, #comments ul li article .vcard ul li, #comments ul li .comment-body .comment-details ul li, #comments ul li .comment-body .vcard ul li {
               font-size: 9.6px;
               margin-right: 16px; }
-              #comments ol li article .comment-details ul li::before, #comments ol li article .vcard ul li::before, #comments ol li .comment-body .comment-details ul li::before, #comments ol li .comment-body .vcard ul li::before {
+              #comments ol li article .comment-details ul li::before, #comments ol li article .vcard ul li::before, #comments ol li .comment-body .comment-details ul li::before, #comments ol li .comment-body .vcard ul li::before, #comments ul li article .comment-details ul li::before, #comments ul li article .vcard ul li::before, #comments ul li .comment-body .comment-details ul li::before, #comments ul li .comment-body .vcard ul li::before {
                 margin-left: 5.6px; } }
-          #comments ol li article .comment-details ul li a, #comments ol li article .vcard ul li a, #comments ol li .comment-body .comment-details ul li a, #comments ol li .comment-body .vcard ul li a {
+          #comments ol li article .comment-details ul li a, #comments ol li article .vcard ul li a, #comments ol li .comment-body .comment-details ul li a, #comments ol li .comment-body .vcard ul li a, #comments ul li article .comment-details ul li a, #comments ul li article .vcard ul li a, #comments ul li .comment-body .comment-details ul li a, #comments ul li .comment-body .vcard ul li a {
             color: inherit;
             text-decoration: none;
             background: none;
             text-shadow: none; }
+            #comments ol li article .comment-details ul li a:hover, #comments ol li article .vcard ul li a:hover, #comments ol li .comment-body .comment-details ul li a:hover, #comments ol li .comment-body .vcard ul li a:hover, #comments ul li article .comment-details ul li a:hover, #comments ul li article .vcard ul li a:hover, #comments ul li .comment-body .comment-details ul li a:hover, #comments ul li .comment-body .vcard ul li a:hover {
+              color: #e7512c;
+              text-decoration: underline; }
       @media screen and (max-width: 520px) {
-        #comments ol li article .comment-details, #comments ol li article .vcard, #comments ol li .comment-body .comment-details, #comments ol li .comment-body .vcard {
+        #comments ol li article .comment-details, #comments ol li article .vcard, #comments ol li .comment-body .comment-details, #comments ol li .comment-body .vcard, #comments ul li article .comment-details, #comments ul li article .vcard, #comments ul li .comment-body .comment-details, #comments ul li .comment-body .vcard {
           margin-bottom: -8px; } }
+  #comments ol li.depth-2 article, #comments ol li.depth-2 .comment-body, #comments ul li.depth-2 article, #comments ul li.depth-2 .comment-body {
+    margin-top: -8px;
+    border-radius: 0 0 8px 8px; }
+    #comments ol li.depth-2 article div, #comments ol li.depth-2 .comment-body div, #comments ul li.depth-2 article div, #comments ul li.depth-2 .comment-body div {
+      margin-left: 48px;
+      padding-left: 8px; }
+      #comments ol li.depth-2 article div.comment-content, #comments ol li.depth-2 .comment-body div.comment-content, #comments ul li.depth-2 article div.comment-content, #comments ul li.depth-2 .comment-body div.comment-content {
+        margin-top: -32px; }
+      #comments ol li.depth-2 article div.comment-details, #comments ol li.depth-2 .comment-body div.comment-details, #comments ul li.depth-2 article div.comment-details, #comments ul li.depth-2 .comment-body div.comment-details {
+        margin-top: -16px; }
+        #comments ol li.depth-2 article div.comment-details ul, #comments ol li.depth-2 .comment-body div.comment-details ul, #comments ul li.depth-2 article div.comment-details ul, #comments ul li.depth-2 .comment-body div.comment-details ul {
+          padding-left: 16px; }
+          @media screen and (max-width: 400px) {
+            #comments ol li.depth-2 article div.comment-details ul, #comments ol li.depth-2 .comment-body div.comment-details ul, #comments ul li.depth-2 article div.comment-details ul, #comments ul li.depth-2 .comment-body div.comment-details ul {
+              padding-left: 8px; } }
+    #comments ol li.depth-2 article figure, #comments ol li.depth-2 .comment-body figure, #comments ul li.depth-2 article figure, #comments ul li.depth-2 .comment-body figure {
+      bottom: -16px;
+      left: -56px; }
+      #comments ol li.depth-2 article figure img, #comments ol li.depth-2 .comment-body figure img, #comments ul li.depth-2 article figure img, #comments ul li.depth-2 .comment-body figure img {
+        width: 56px;
+        height: 56px; }
+      @media screen and (max-width: 700px) {
+        #comments ol li.depth-2 article figure, #comments ol li.depth-2 .comment-body figure, #comments ul li.depth-2 article figure, #comments ul li.depth-2 .comment-body figure {
+          left: -40px; }
+          #comments ol li.depth-2 article figure img, #comments ol li.depth-2 .comment-body figure img, #comments ul li.depth-2 article figure img, #comments ul li.depth-2 .comment-body figure img {
+            width: 44px;
+            height: 44px; } }
+      @media screen and (max-width: 520px) {
+        #comments ol li.depth-2 article figure, #comments ol li.depth-2 .comment-body figure, #comments ul li.depth-2 article figure, #comments ul li.depth-2 .comment-body figure {
+          left: -24px; }
+          #comments ol li.depth-2 article figure img, #comments ol li.depth-2 .comment-body figure img, #comments ul li.depth-2 article figure img, #comments ul li.depth-2 .comment-body figure img {
+            width: 44px;
+            height: 44px; } }
 @media screen and (max-width: 700px) {
   #comments {
     margin-left: 5%;

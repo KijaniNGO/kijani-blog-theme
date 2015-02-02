@@ -337,6 +337,23 @@ article, .comment-area, .post-area, .comment-body {
 
 #comments {
 	form {
+		.abort-button {
+			display: block;
+			position: absolute;
+			top: 1*$em;
+			right: 1*$em;
+			width: 1.5*$em;
+			height: 1.5*$em;
+			background: $dark-gray;
+			color: $white;
+			font-family: $headline-type;
+			font-weight: 500;
+			text-align: center;
+			cursor: pointer;
+			padding: 0;
+			border-radius: 100%;
+			box-sizing: border-box;
+		}
 		input, textarea {
 			border: none;
 			background: inherit;
@@ -412,6 +429,9 @@ article, .comment-area, .post-area, .comment-body {
 					}
 				}
 			}
+			.logged-in {
+				margin-top: 2*$em;
+			}
 			input {
 				font-family: $headline-type;
 				font-weight: 300;
@@ -471,28 +491,41 @@ article, .comment-area, .post-area, .comment-body {
 			}
 		}
 	}
-	ol {
+	ol, ul {
 		list-style-type: none;
 		width: 100%;
 		margin: 0;
 		padding: 0;
+		.reply-link {
+			cursor: pointer;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 		li {
 			article, .comment-body {
 				border-radius: 0.5*$em;
 				position: relative;
 				margin-top: 1.5*$em;
 				padding-bottom: 1*$em;
-				@media screen and (max-width: 720px) {
-					padding-top: -1px;
-					p {
-						margin: 0.5*$em 0 0.5*$em 0.5*$em;
+				.comment-content {
+					padding: 0 0.5*$em;
+					@media screen and (max-width: 720px) {
+						margin-top: -1*$em;
+					}
+					@media screen and (max-width: 520px) {
+						padding: 0 1*$em;
 					}
 				}
-				@media screen and (max-width: 520px) {
-					p {
-						margin: 0.5*$em 0;
-					}
-				}
+					// p {
+					// 	margin: 0.5*$em 0 0.5*$em 0.5*$em;
+					// }
+				// }
+				// @media screen and (max-width: 520px) {
+				// 	p {
+				// 		margin: 0.5*$em 0;
+				// 	}
+				// }
 				.avatar-default {
 					display: none;
 				}
@@ -504,6 +537,7 @@ article, .comment-area, .post-area, .comment-body {
 					width: auto;
 					border-radius: 100%;
 					box-shadow: 0 0 1px rgba($dust,0.1);
+					z-index: 10;
 					img {
 						width: 4*$em;
 						height: 4*$em;
@@ -516,30 +550,38 @@ article, .comment-area, .post-area, .comment-body {
 						filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
 					}
 					@media screen and (max-width: 700px) {
-						left: -3*$em;
+						left: -3.25*$em;
 						img {
-							width: 3.5*$em;
-							height: 3.5*$em;
+							width: 3.25*$em;
+							height: 3.25*$em;
 						}
 					}
 					@media screen and (max-width: 600px) {
-						left: -2.5*$em;
-					}
-					@media screen and (max-width: 520px) {
-						left: -0.5*$em;
-						bottom: -2*$em;
+						left: -2.75*$em;
 						img {
 							width: 3*$em;
 							height: 3*$em;
 						}
 					}
+					@media screen and (max-width: 520px) {
+						left: -0.4*$em;
+						bottom: -2*$em;
+						img {
+							width: 2.75*$em;
+							height: 2.75*$em;
+						}
+					}
+					@media screen and (max-width: 480px) {
+						left: -0.65*$em;
+					}
 				}
 				.comment-details, .vcard {
 					border-top: 1px solid $green2;
 					position: relative;
+					margin-top: -1*$em;
 					ul {
 						list-style-type: none;
-						padding: 0 0 0 2*$em;
+						padding: 0 0 0 1.5*$em;
 						li {
 							display: inline-block;
 							font-family: $headline-type;
@@ -559,11 +601,14 @@ article, .comment-area, .post-area, .comment-body {
 								&::before {
 									content: "";
 								}
-								@media screen and (max-width: 600px) {
-									margin-left: 0;
+								@media screen and (max-width: 520px) {
+									margin-left: -0.5*$em;
+								}
+								@media screen and (max-width: 400px) {
+									margin-left: 0*$em;
 								}
 							}
-							@media screen and (max-width: 400px) {
+							@media screen and (max-width: 420px) {
 								font-size: 0.6*$em;
 								margin-right: 1*$em;
 								&::before {
@@ -575,11 +620,60 @@ article, .comment-area, .post-area, .comment-body {
 								text-decoration: none;
 								background: none;
 								text-shadow: none;
+								&:hover {
+									color: $red;
+									text-decoration: underline;
+								}
 							}
 						}
 					}
+
 					@media screen and (max-width: 520px) {
 						margin-bottom: -0.5*$em;
+					}
+				}
+			}
+			&.depth-2 {
+				article, .comment-body {
+					margin-top: -0.5*$em;
+					border-radius: 0 0 0.5*$em 0.5*$em;
+					div {
+						margin-left: 3*$em;
+						padding-left: 0.5*$em;
+						&.comment-content {
+							margin-top: -2*$em;
+						}
+						&.comment-details {
+							margin-top: -1*$em;
+							ul {
+								padding-left: 1*$em;
+								@media screen and (max-width: 400px) {
+									padding-left: 0.5*$em;
+								}
+							}
+						}
+					}
+					figure {
+						bottom: -1*$em;
+						left: -3.5*$em;
+						img {
+							width: 3.5*$em;
+							height: 3.5*$em;
+						}
+						@media screen and (max-width: 700px) {
+							left: -2.5*$em;
+							img {
+								width: 2.75*$em;
+								height: 2.75*$em;
+							}
+						}
+						@media screen and (max-width: 520px) {
+							left: -1.5*$em;
+							img {
+								width: 2.75*$em;
+								height: 2.75*$em;
+							}
+						}
 					}
 				}
 			}

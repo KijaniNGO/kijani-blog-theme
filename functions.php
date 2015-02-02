@@ -38,7 +38,7 @@ function shorten_str($str, $length = 80, $suffix = ' ...') {
 function mytheme_comment($comment) {
 	$GLOBALS['comment'] = $comment; ?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID()?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment-body">
+		<article id="<?php comment_ID(); ?>" class="comment-body">
 			<div class="comment-content">
 				<?php comment_text() ?>
 			</div>
@@ -51,12 +51,14 @@ function mytheme_comment($comment) {
 						<?php echo get_comment_author_link() ?>
 					</li>
 					<li class="comment-time">
-						<?php printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?>
+						<?php printf(__('%1$s'), get_comment_date()) ?>
+					</li>
+					<li class="comment-reply">
+						<span class="reply-link">Reply</span>
 					</li>
 				</ul>
 			</div>
 		</article>
-	</li>
 <?php
         }
 ?>
