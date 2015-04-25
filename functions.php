@@ -1,11 +1,26 @@
 <?php
 /**
  * functions and definitions
- *
- *
  */
 
-add_theme_support( 'post-thumbnails' );
+$thumbnail_sizes = array(
+                'hd-display' => 1920,
+                'large-display' => 1200,
+                'default-display' => 980,
+                'tablets-portrait-display' => 768,
+                'tablets-phones-display' => 640,
+                'phones-display' => 480
+            );
+
+/** thumbnail support */
+if ( function_exists( 'add_theme_support' ) ) { 
+    add_theme_support( 'post-thumbnails' );
+
+    // additional image sizes
+    foreach($thumbnail_sizes as $size => $width) {
+        add_image_size($size, $width, 9999); // unlimited height, no cropping
+    }
+}
 
 /**
  * Markdown Image Manipulation
