@@ -3,6 +3,21 @@
  * functions and definitions
  */
 
+/** adding image to rss */
+remove_all_actions( 'do_feed_rss2' );
+add_action( 'do_feed_rss2', 'mailchimp_rss_modification', 10, 1 );
+
+function mailchimp_rss_modification( $content ) {
+    $rss_template = get_template_directory() . '/feeds/mailchimp.php';
+    if( file_exists( $rss_template ) ) {
+        load_template( $rss_template );
+    } else {
+        do_feed_rss2( $content ); // Call default function
+    }
+        
+}
+
+/** thumbnail support */
 $thumbnail_sizes = array(
                 'hd-display' => 1920,
                 'large-display' => 1200,
@@ -12,7 +27,6 @@ $thumbnail_sizes = array(
                 'phones-display' => 480
             );
 
-/** thumbnail support */
 if ( function_exists( 'add_theme_support' ) ) { 
     add_theme_support( 'post-thumbnails' );
 
