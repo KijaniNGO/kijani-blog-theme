@@ -116,7 +116,8 @@ do_action( 'rss_tag_pre', 'rss2' );
             
             ?>
             <media:content
-              url="<?php echo $img_generation_url; ?>"
+                xmlns:media="http://www.w3.org/2001/XMLSchema-instance"
+              url="<?php echo htmlspecialchars($img_generation_url); ?>"
               type="image/jpg"
               medium="image"
               height="<?php echo $img_height; ?>"
