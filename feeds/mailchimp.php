@@ -100,20 +100,21 @@ do_action( 'rss_tag_pre', 'rss2' );
 		<content:encoded><![CDATA[<?php the_excerpt_rss(); ?>]]></content:encoded>
 	<?php endif; ?>
 <?php endif; ?>
-                
+
 
 		<wfw:commentRss><?php echo esc_url( get_post_comments_feed_link(null, 'rss2') ); ?></wfw:commentRss>
 		<slash:comments><?php echo get_comments_number(); ?></slash:comments>
-                
+
                 <?php
             // MAIL CHIMP IMAGE
+			$imagerenderer = "http://kijani.co/imagerenderer/img.php";
             $thumbnail_attributes = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full');
             $img_url = urlencode($thumbnail_attributes[0]);
             $img_title = urlencode(get_the_title_rss());
-            $img_width = '300';
-            $img_height = '168';
-            $img_generation_url = "http://kijani.co/imagerenderer/img.php?imgurl=$img_url&title=$img_title&width=$img_width&type=jpg&qual=80";
-            
+            $img_width = '600';
+			$img_height = $img_width/16*9;
+            $img_generation_url = "$imagerenderer?imgurl=$img_url&title=$img_title&width=$img_width&type=jpg&qual=80";
+
             ?>
             <media:content
                 xmlns:media="http://www.w3.org/2001/XMLSchema-instance"
@@ -123,7 +124,7 @@ do_action( 'rss_tag_pre', 'rss2' );
               height="<?php echo $img_height; ?>"
               width="<?php echo $img_width; ?>"
             />
-                
+
 <?php rss_enclosure(); ?>
 	<?php
 	/**
