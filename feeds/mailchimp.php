@@ -111,7 +111,7 @@ do_action( 'rss_tag_pre', 'rss2' );
             $thumbnail_attributes = wp_get_attachment_image_src( get_post_thumbnail_id() );
             $img_url = urlencode($thumbnail_attributes[0]);
             $img_title = urlencode(get_the_title_rss());
-            $img_width = '600';
+            $img_width = 600;
 			$img_height = $img_width/16*9;
             $img_generation_url = "$imagerenderer?imgurl=$img_url&title=$img_title&width=$img_width&type=jpg&qual=80";
 

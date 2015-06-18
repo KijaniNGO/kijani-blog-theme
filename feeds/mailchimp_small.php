@@ -89,7 +89,17 @@ do_action( 'rss_tag_pre', 'rss2' );
 		<?php the_category_rss('rss2') ?>
 
 		<guid isPermaLink="false"><?php the_guid(); ?></guid>
+<?php if (get_option('rss_use_excerpt')) : ?>
 		<description><![CDATA[<?php the_excerpt_rss(); ?>]]></description>
+<?php else : ?>
+		<description><![CDATA[<?php the_excerpt_rss(); ?>]]></description>
+	<?php $content = get_the_content_feed('rss2'); ?>
+	<?php if ( strlen( $content ) > 0 ) : ?>
+		<content:encoded><![CDATA[<?php echo $content; ?>]]></content:encoded>
+	<?php else : ?>
+		<content:encoded><![CDATA[<?php the_excerpt_rss(); ?>]]></content:encoded>
+	<?php endif; ?>
+<?php endif; ?>
 
 
 		<wfw:commentRss><?php echo esc_url( get_post_comments_feed_link(null, 'rss2') ); ?></wfw:commentRss>
@@ -101,7 +111,7 @@ do_action( 'rss_tag_pre', 'rss2' );
             $thumbnail_attributes = wp_get_attachment_image_src( get_post_thumbnail_id() );
             $img_url = urlencode($thumbnail_attributes[0]);
             $img_title = urlencode(get_the_title_rss());
-            $img_width = '264';
+            $img_width = 264;
 			$img_height = $img_width/16*9;
             $img_generation_url = "$imagerenderer?imgurl=$img_url&title=$img_title&width=$img_width&type=jpg&qual=80";
 

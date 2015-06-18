@@ -16,7 +16,8 @@ function mailchimp_rss_modification( $content ) {
     }
 }
 
-add_feed('small', 'mailchimp_rss_modification_small');
+remove_all_actions( 'do_feed_atom' );
+add_action( 'do_feed_atom', 'mailchimp_rss_modification_small', 10, 1 );
 function mailchimp_rss_modification_small( $content ) {
     $rss_template = get_template_directory() . '/feeds/mailchimp_small.php';
     if( file_exists( $rss_template ) ) {
