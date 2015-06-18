@@ -27,6 +27,9 @@ html, body {
   position: relative;
   z-index: -9; }
 
+input, textarea {
+  font-size: 16px; }
+
 .default-back {
   background: #98ba8e url(./back.jpg) repeat;
   background-size: 750px; }
