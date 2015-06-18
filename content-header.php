@@ -31,64 +31,13 @@ $slug = basename(get_permalink());
     </div>
     <div class="hero-img">
 
-        <?php if ( has_post_thumbnail() ) : // check if the post has a Post Thumbnail assigned to it. ?>
-
-            <?php
-
-            // adaptive image sizes (definied in functions.php)
-            $thumbnail_sizes = array('hd-display','large-display','default-display','tablets-portrait-display','tablets-phones-display','phones-display');
-
-            $srcset = '';
-            $src = '';
-            foreach($thumbnail_sizes as $size) {
-
-                $thumbnail_attributes = wp_get_attachment_image_src( get_post_thumbnail_id(), $size);
-
-                $srcset .= $thumbnail_attributes[0] . ' '
-                        . $thumbnail_attributes[1] . 'w '
-                        . $thumbnail_attributes[2] . 'h ';
-
-                // default
-                if ($size == 'default-display') {
-                    $src = $thumbnail_attributes[0];
-                }
-            }
-
-            ?>
-        <picture class="green-overlay">
-            <img class="grayscale" src="<?php echo $src; ?>"
-                 srcset="<?php echo $srcset; ?>"
-                 alt="hero image">
-        </picture>
-            <?php
-/**
-* THIS SOLUTION IS NOT SUPPORTED BY FIREFOX AND CHROME
-*/
-//                echo '<picture class="green-overlay">';
-//
-//                // additional image sizes (definied in functions.php)
-//                $thumbnail_sizes = array('hd-display','large-display','default-display','tablets-portrait-display','tablets-phones-display','phones-display');
-//
-//                foreach($thumbnail_sizes as $size) {
-//
-//                    $thumbnail_attributes = wp_get_attachment_image_src( get_post_thumbnail_id(), $size);
-//
-//                    // adaptive media source
-//                    echo '<source media="(min-width: '.$thumbnail_attributes[1].'px)" '
-//                            . 'src="'.$thumbnail_attributes[0].'">
-//                            ';
-//
-//                    // fallback
-//                    if ($size == 'default-display') {
-//                        echo '<!-- fallback for browsers without support -->
-//                              <img src="'.$thumbnail_attributes[0].'" class="grayscale" alt="hero image">';
-//                    }
-//                }
-//
-//                echo '</picture>';
-
-            ?>
-
+        <?php if ( has_post_thumbnail() ) : // check if the post has a Post Thumbnail assigned to it.
+            $post_thumb_url = wp_get_attachment_image_src( get_post_thumbnail_id() );
+        ?>
+            <picture class="green-overlay">
+                <source media="(min-width: 1400px)" srcset="<?php echo $post_thumb_url[0]; ?>">
+                <img src="<?php echo $post_thumb_url[0]; ?>" class="grayscale" alt="hero image">
+            </picture>
         <?php else : ?>
             <div class="default-back"></div>
         <?php endif; ?>
