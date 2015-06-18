@@ -14,7 +14,16 @@ function mailchimp_rss_modification( $content ) {
     } else {
         do_feed_rss2( $content ); // Call default function
     }
+}
 
+add_feed('small', 'mailchimp_rss_modification_small');
+function mailchimp_rss_modification_small( $content ) {
+    $rss_template = get_template_directory() . '/feeds/mailchimp_small.php';
+    if( file_exists( $rss_template ) ) {
+        load_template( $rss_template );
+    } else {
+        do_feed_rss2( $content ); // Call default function
+    }
 }
 
 // Add Thumbnail support
