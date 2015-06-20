@@ -3,6 +3,14 @@
  * functions and definitions
  */
 
+function get_image_generation_url($img_url, $img_title, $img_width) {
+
+    $imagerenderer = "http://kijani.co/imagerenderer/img.php";
+    $img_generation_url = "$imagerenderer?imgurl=$img_url&title=$img_title&width=$img_width&type=jpg&qual=80";
+            
+    return $img_generation_url;
+}
+
 /** adding image to rss */
 remove_all_actions( 'do_feed_rss2' );
 add_action( 'do_feed_rss2', 'mailchimp_rss_modification', 10, 1 );

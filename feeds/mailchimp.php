@@ -7,7 +7,6 @@
 
 header('Content-Type: ' . feed_content_type('rss-http') . '; charset=' . get_option('blog_charset'), true);
 $more = 1;
-
 echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 
 /**
@@ -78,7 +77,19 @@ do_action( 'rss_tag_pre', 'rss2' );
 	 */
 	do_action( 'rss2_head');
 
+        // implement omiting
+        $omit = (isset($_GET['omit'])) ? $_GET['omit'] : 0;
+        if ( !is_numeric($omit) || $omit < 0) {
+            $omit = 0;
+        }
+        
+        $count = 0;
 	while( have_posts()) : the_post();
+        $count++;
+        if ($omit >= $count) {
+            continue;
+        }
+        
 	?>
 	<item>
 		<title><?php the_title_rss() ?></title>
@@ -106,19 +117,38 @@ do_action( 'rss_tag_pre', 'rss2' );
 		<slash:comments><?php echo get_comments_number(); ?></slash:comments>
 
                 <?php
-            // MAIL CHIMP IMAGE
-			$imagerenderer = "http://kijani.co/imagerenderer/img.php";
-            $thumbnail_attributes = wp_get_attachment_image_src( get_post_thumbnail_id() );
-            $img_url = urlencode($thumbnail_attributes[0]);
-            $img_title = urlencode(get_the_title_rss());
-            $img_width = 600;
-			$img_height = $img_width/16*9;
-            $img_generation_url = "$imagerenderer?imgurl=$img_url&title=$img_title&width=$img_width&type=jpg&qual=80";
+                
+                // adjust size
+                $size = 'default';
+                if (isset($_GET['size'])) {
+                    $size = $_GET['size'];
+                }
+                
+                    // default
+                    $img_width = 600;
+                    $img_height = $img_width/16*9;
+                
+                    // small
+                    if ($size == 'small') {
+                        $img_width = 264;
+                        $img_height = $img_width/16*9;
+                    }
+                
+                    // other sizes 
+                    // ...
+                    
+                        
+                // compose img title and url
+                $thumbnail_attributes = wp_get_attachment_image_src( get_post_thumbnail_id() );
+                $img_url = urlencode($thumbnail_attributes[0]);
+                $img_title = urlencode(get_the_title_rss());
+            
+                $img_generation_url = get_image_generation_url($img_url, $img_title, $img_width);
 
             ?>
             <media:content
                 xmlns:media="http://www.w3.org/2001/XMLSchema-instance"
-              url="<?php echo htmlspecialchars($img_generation_url); ?>"
+                url="<?php echo htmlspecialchars($img_generation_url); ?>"
               type="image/jpg"
               medium="image"
               height="<?php echo $img_height; ?>"
