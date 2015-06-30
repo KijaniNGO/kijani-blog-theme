@@ -30,7 +30,6 @@ $slug = basename(get_permalink());
         </div>
     </div>
     <div class="hero-img">
-
         <?php if ( has_post_thumbnail() ) : // check if the post has a Post Thumbnail assigned to it.
             $post_thumb_url = wp_get_attachment_image_src( get_post_thumbnail_id() );
         ?>
@@ -43,3 +42,39 @@ $slug = basename(get_permalink());
         <?php endif; ?>
     </div>
 </header>
+
+<?php
+    // add image url to post meta
+    ob_start();
+    if ( has_post_thumbnail() ) {
+        $post_thumb_url = wp_get_attachment_image_src( get_post_thumbnail_id() );
+
+        $image_url = get_image_generation_url($post_thumb_url[0], urlencode(the_title('','',false)), 600);
+        add_post_meta(the_ID(), '_amt_image_url', $image_url);
+    }
+    ob_end_clean();
+
+    // print_r($image_url);
+    //
+    // $supported_custom_fields = array( '_amt_image_url' );
+    //
+    // $custom_fields = get_post_custom_keys( $post_id );
+    // print_r($custom_fields);
+    // print_r(" | ");
+    // if ( empty( $custom_fields ) ) {
+    //     print_r("empty");
+    //     print_r(" | ");
+    // }
+    //
+    // foreach( $supported_custom_fields as $sup_field ) {
+    //     // If such a field exists in the db, return its content as the news keywords.
+    //     print_r($sup_field);
+    //     print_r(" | ");
+    //     if ( in_array( $sup_field, $custom_fields ) ) {
+    //         print_r("found");
+    //         print_r(" | ");
+    //         print_r( get_post_meta( $post_id, $sup_field, true ));
+    //         print_r(" | ");
+    //     }
+    // }
+?>

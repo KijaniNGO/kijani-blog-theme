@@ -3,29 +3,12 @@
  * functions and definitions
  */
 
-/**
- * Modify meta tags
- * @param type $metatags
- * @return string
- */
-function customize_og_sitename_metatag( $metatags ) {
-
-    // remove auto generation
-    $metatags = array_slice($metatags, 0,10);
-    
-    // customize
-    $metatags[] = '<meta property="fb:admins" content="ENTER_USER_ID_HERE" />';
-            
-    return $metatags;
-}
-add_filter( 'amt_opengraph_metadata_head', 'customize_og_sitename_metatag', 10, 1 );
-
 /** */
 function get_image_generation_url($img_url, $img_title, $img_width) {
 
     $imagerenderer = "http://kijani.co/imagerenderer/img.php";
     $img_generation_url = "$imagerenderer?imgurl=$img_url&title=$img_title&width=$img_width&type=jpg&qual=80";
-            
+
     return $img_generation_url;
 }
 
