@@ -1,11 +1,4 @@
-@font-face {
-  font-family: 'Blanch';
-  src: url("fonts/blanch-webfont.eot");
-  src: url("fonts/blanch-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/blanch-webfont.woff2") format("woff2"), url("fonts/blanch-webfont.woff") format("woff"), url("fonts/blanch-webfont.ttf") format("truetype"), url("fonts/blanch-webfont.svg#blanchcaps") format("svg");
-  font-weight: normal;
-  font-style: normal; }
 html, body {
-  overflow-x: hidden;
   width: 100%;
   min-height: 100%;
   margin: 0;
@@ -82,9 +75,11 @@ picture, figure {
 
 .title {
   color: #499948;
-  font-family: "Blanch", "Ubuntu Condensed", "Futura", sans-serif;
-  font-weight: normal;
-  font-size: 48px;
+  font-family: "yummo", "Ubuntu Condensed", "Futura", sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
   line-height: 32px;
   margin: 11.2px 0 -3.2px 0; }
 
@@ -98,8 +93,10 @@ picture, figure {
   box-shadow: 0 0 1px rgba(147, 130, 125, 0.1); }
 
 .overflow-hidden {
-  overflow: hidden;
-  height: 100vh; }
+  overflow: hidden; }
+
+.overflow-x-hidden {
+  overflow-x: hidden; }
 
 .hidden {
   display: none; }
@@ -172,10 +169,12 @@ picture, figure {
       -webkit-transform: scale(1.05) translateZ(0);
               transform: scale(1.05) translateZ(0); }
     .top-bar .nav-trigger .menu-text {
-      font-family: "Blanch", "Ubuntu Condensed", "Futura", sans-serif;
-      font-size: 73.6px;
-      font-weight: normal;
-      line-height: 40px;
+      font-family: "yummo", "Ubuntu Condensed", "Futura", sans-serif;
+      font-size: 44px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.025em;
+      line-height: 36px;
       margin-right: 67.2px;
       color: #f8f9f7;
       -webkit-transition: all 0.15s;
@@ -300,6 +299,7 @@ nav {
       font-family: "bree", "Ubuntu Condensed", "Futura", sans-serif;
       font-size: 32px;
       font-weight: 700;
+      text-transform: capitalize;
       letter-spacing: 0.01em;
       color: #6dac6e;
       line-height: 32px;
@@ -308,12 +308,12 @@ nav {
       display: block;
       width: 320px;
       margin: 0 auto;
-      font-family: "Blanch", "Ubuntu Condensed", "Futura", sans-serif;
-      font-size: 56px;
-      font-weight: normal;
-      line-height: 51.2px;
-      letter-spacing: 1.6px;
-      text-transform: capitalize;
+      font-family: "yummo", "Ubuntu Condensed", "Futura", sans-serif;
+      font-size: 44px;
+      font-weight: 800;
+      text-transform: lowercase;
+      letter-spacing: -0.02em;
+      line-height: 48px;
       color: #f8f9f7;
       -webkit-transition: all 0.2s;
               transition: all 0.2s; }
@@ -532,12 +532,12 @@ article, .comment-area, .post-area, .comment-body {
   article .dropcap, .comment-area .dropcap, .post-area .dropcap, .comment-body .dropcap {
     float: left;
     color: #499948;
-    font-family: "Blanch", "Ubuntu Condensed", "Futura", sans-serif;
-    font-weight: normal;
+    font-family: "yummo", "Ubuntu Condensed", "Futura", sans-serif;
+    font-weight: 600;
     text-transform: capitalize;
-    font-size: 176px;
+    font-size: 120px;
     line-height: 48px;
-    padding: 20px 0.8px 24px 0; }
+    padding: 20px 4px 24px 0; }
   article a, .comment-area a, .post-area a, .comment-body a {
     color: #499948;
     cursor: alias;
@@ -823,6 +823,7 @@ article, .comment-area, .post-area, .comment-body {
         color: rgba(248, 249, 247, 0); }
     #comments form .post-area input[type="submit"] {
       margin-top: -32px;
+      margin-right: 4px;
       display: block;
       position: relative;
       float: right;
@@ -830,13 +831,16 @@ article, .comment-area, .post-area, .comment-body {
       height: auto;
       background: #6dac6e;
       color: #f8f9f7;
-      font-weight: 500;
+      font-family: "yummo", "Ubuntu Condensed", "Futura", sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      text-transform: uppercase;
       text-align: center;
       text-decoration: none;
       letter-spacing: -0.16px;
       text-shadow: 1px 1px 0 #599c5a;
       cursor: pointer;
-      padding: 3.2px 11.2px 0 11.2px;
+      padding: 1.6px 11.2px 0 11.2px;
       border-radius: 8px;
       box-shadow: 0 4px 0 #599c5a, 0 4px 8px rgba(25, 24, 23, 0.3); }
       #comments form .post-area input[type="submit"]:hover, #comments form .post-area input[type="submit"]:focus, #comments form .post-area input[type="submit"]:active {
@@ -1097,8 +1101,8 @@ aside {
     overflow: hidden;
     margin: 16px 8px 0 0; }
     aside.author figure img {
-      width: 150%;
-      margin-left: -25%; }
+      width: 172%;
+      margin-left: -36%; }
   @media screen and (max-width: 1023px) {
     aside.author {
       margin-top: 0px;
@@ -1252,12 +1256,14 @@ aside {
       -webkit-transition: -webkit-transform 0.3s, opacity 0.1s;
               transition: transform 0.3s, opacity 0.1s; }
   aside.articles .archive-link {
-    font-family: "bree", "Ubuntu Condensed", "Futura", sans-serif;
-    font-size: 16px;
-    font-weight: 700;
+    font-family: "yummo", "Ubuntu Condensed", "Futura", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: lowercase;
     text-align: right;
+    letter-spacing: -0.02em;
     padding-right: 8px;
-    margin: -3.2px 0 3.2px 0;
+    margin: -8px 0 8px 0;
     -webkit-transition: color 0.3s;
             transition: color 0.3s; }
     aside.articles .archive-link:hover, aside.articles .archive-link:focus {

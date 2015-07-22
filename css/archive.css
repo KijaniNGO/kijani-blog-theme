@@ -1,11 +1,4 @@
-@font-face {
-  font-family: 'Blanch';
-  src: url("fonts/blanch-webfont.eot");
-  src: url("fonts/blanch-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/blanch-webfont.woff2") format("woff2"), url("fonts/blanch-webfont.woff") format("woff"), url("fonts/blanch-webfont.ttf") format("truetype"), url("fonts/blanch-webfont.svg#blanchcaps") format("svg");
-  font-weight: normal;
-  font-style: normal; }
 html, body {
-  overflow-x: hidden;
   width: 100%;
   min-height: 100%;
   margin: 0;
@@ -82,9 +75,11 @@ picture, figure {
 
 .title {
   color: #499948;
-  font-family: "Blanch", "Ubuntu Condensed", "Futura", sans-serif;
-  font-weight: normal;
-  font-size: 48px;
+  font-family: "yummo", "Ubuntu Condensed", "Futura", sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
   line-height: 32px;
   margin: 11.2px 0 -3.2px 0; }
 
@@ -98,8 +93,10 @@ picture, figure {
   box-shadow: 0 0 1px rgba(147, 130, 125, 0.1); }
 
 .overflow-hidden {
-  overflow: hidden;
-  height: 100vh; }
+  overflow: hidden; }
+
+.overflow-x-hidden {
+  overflow-x: hidden; }
 
 .hidden {
   display: none; }
@@ -172,10 +169,12 @@ picture, figure {
       -webkit-transform: scale(1.05) translateZ(0);
               transform: scale(1.05) translateZ(0); }
     .top-bar .nav-trigger .menu-text {
-      font-family: "Blanch", "Ubuntu Condensed", "Futura", sans-serif;
-      font-size: 73.6px;
-      font-weight: normal;
-      line-height: 40px;
+      font-family: "yummo", "Ubuntu Condensed", "Futura", sans-serif;
+      font-size: 44px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.025em;
+      line-height: 36px;
       margin-right: 67.2px;
       color: #f8f9f7;
       -webkit-transition: all 0.15s;
@@ -300,6 +299,7 @@ nav {
       font-family: "bree", "Ubuntu Condensed", "Futura", sans-serif;
       font-size: 32px;
       font-weight: 700;
+      text-transform: capitalize;
       letter-spacing: 0.01em;
       color: #6dac6e;
       line-height: 32px;
@@ -308,12 +308,12 @@ nav {
       display: block;
       width: 320px;
       margin: 0 auto;
-      font-family: "Blanch", "Ubuntu Condensed", "Futura", sans-serif;
-      font-size: 56px;
-      font-weight: normal;
-      line-height: 51.2px;
-      letter-spacing: 1.6px;
-      text-transform: capitalize;
+      font-family: "yummo", "Ubuntu Condensed", "Futura", sans-serif;
+      font-size: 44px;
+      font-weight: 800;
+      text-transform: lowercase;
+      letter-spacing: -0.02em;
+      line-height: 48px;
       color: #f8f9f7;
       -webkit-transition: all 0.2s;
               transition: all 0.2s; }

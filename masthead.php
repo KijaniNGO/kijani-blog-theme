@@ -8,20 +8,14 @@
 <nav>
     <ul>
         <li>
-            <h3>what</h3>
+            <h3>about us</h3>
             <ul>
                 <li><a href="http://kijani.co">home</a></li>
                 <li><a href="http://blog.kijani.co">blog</a></li>
                 <!-- <li><a href="">contact</a></li> -->
+                <!-- <li><a href="">team</a></li> -->
+                <!-- <li><a href="">values</a></li> -->
             </ul>
-        </li>
-        <!-- <li> -->
-            <!-- <h3>who</h3>
-            <ul>
-                <li><a href="">team</a></li>
-                <li><a href="">values</a></li>
-            </ul> -->
-        <!-- </li> -->
         <li>
             <h3>support us</h3>
             <ul>

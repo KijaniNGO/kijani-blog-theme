@@ -1,15 +1,13 @@
 @import "colors";
-@import "fonts/blanch";
 
 $em: 16px;
-$accent-type: "Blanch", "Ubuntu Condensed", "Futura", sans-serif;
+$accent-type: "yummo", "Ubuntu Condensed", "Futura", sans-serif;
 $headline-type: "bree", "Ubuntu Condensed", "Futura", sans-serif;
 $body-type: "merriweather", "Georgia", serif;
 
 $max-width: 1920px;
 
 html, body {
-	overflow-x: hidden;
 	width: 100%;
 	min-height: 100%;
 	margin: 0;
@@ -126,8 +124,10 @@ picture, figure {
 .title {
 	color: $green;
 	font-family: $accent-type;
-	font-weight: normal;
-	font-size: 3*$em;
+	font-weight: 800;
+	font-size: 2*$em;
+	text-transform: uppercase;
+	letter-spacing: -0.025em;
 	line-height: 2*$em;
 	margin: 0.7*$em 0 -0.2*$em 0;
 }
@@ -148,7 +148,10 @@ picture, figure {
 
 .overflow-hidden {
 	overflow: hidden;
-	height: 100vh;
+}
+
+.overflow-x-hidden {
+	overflow-x: hidden;
 }
 
 .hidden {
