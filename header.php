@@ -17,7 +17,7 @@ $blog_css = ($slug === 'archive') ? 'archive' : 'blogpost';
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <script src="//use.typekit.net/ndr8xkb.js"></script>
-    <script>try{Typekit.load();}catch(e){}</script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/<?php echo $blog_css; ?>.min.css">
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">

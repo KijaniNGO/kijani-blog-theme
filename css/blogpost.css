@@ -533,11 +533,13 @@ article, .comment-area, .post-area, .comment-body {
     float: left;
     color: #499948;
     font-family: "yummo", "Ubuntu Condensed", "Futura", sans-serif;
-    font-weight: 600;
+    font-weight: 800;
     text-transform: capitalize;
-    font-size: 120px;
-    line-height: 48px;
-    padding: 20px 4px 24px 0; }
+    font-size: 124px;
+    line-height: 52px;
+    padding: 20px 4px 24px 0;
+    display: inline-block;
+    margin-left: -5.6px; }
   article a, .comment-area a, .post-area a, .comment-body a {
     color: #499948;
     cursor: alias;

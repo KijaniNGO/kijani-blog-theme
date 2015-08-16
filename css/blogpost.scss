@@ -186,11 +186,13 @@ article, .comment-area, .post-area, .comment-body {
 		float: left;
 		color: $green;
 		font-family: $accent-type;
-		font-weight: 600;
+		font-weight: 800;
 		text-transform: capitalize;
-		font-size: 7.5*$em;
-		line-height: 3*$em;
+		font-size: 7.75*$em;
+		line-height: 3.25*$em;
 		padding: 1.25*$em 0.25*$em 1.5*$em 0;
+		display: inline-block;
+		margin-left: -0.35*$em;
 	}
 	a {
 		color: $green;
