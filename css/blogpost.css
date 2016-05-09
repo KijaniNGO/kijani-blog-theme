@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Yummo W01 Bold1444433";
-  src: url("yummo/2979cad7-fb6a-4f90-ac4f-81abeb1db5ee.eot?#iefix");
-  src: url("yummo/2979cad7-fb6a-4f90-ac4f-81abeb1db5ee.eot?#iefix") format("eot"), url("yummo/50d72a03-c1fa-44ec-9ab6-0ee701e22fad.woff2") format("woff2"), url("yummo/66596749-cc45-4323-95d3-7d9068159531.woff") format("woff"), url("yummo/d0f10cb0-269b-469e-939e-83f9f74b1d8e.ttf") format("truetype");
+  src: url("fonts/2979cad7-fb6a-4f90-ac4f-81abeb1db5ee.eot?#iefix");
+  src: url("fonts/2979cad7-fb6a-4f90-ac4f-81abeb1db5ee.eot?#iefix") format("eot"), url("fonts/50d72a03-c1fa-44ec-9ab6-0ee701e22fad.woff2") format("woff2"), url("fonts/66596749-cc45-4323-95d3-7d9068159531.woff") format("woff"), url("fonts/d0f10cb0-269b-469e-939e-83f9f74b1d8e.ttf") format("truetype");
   font-weight: 800;
   font-style: normal; }
 html, body {
@@ -80,7 +80,7 @@ picture, figure {
 
 .title {
   color: #499948;
-  font-family: "Yummo", "Yummo W01 Bold1444433", "Ubuntu Condensed", "Futura", sans-serif;
+  font-family: "Yummo W01 Bold1444433", "Ubuntu Condensed", "Futura", sans-serif;
   font-weight: 800;
   font-size: 32px;
   text-transform: uppercase;
@@ -174,7 +174,7 @@ picture, figure {
       -webkit-transform: scale(1.05) translateZ(0);
               transform: scale(1.05) translateZ(0); }
     .top-bar .nav-trigger .menu-text {
-      font-family: "Yummo", "Yummo W01 Bold1444433", "Ubuntu Condensed", "Futura", sans-serif;
+      font-family: "Yummo W01 Bold1444433", "Ubuntu Condensed", "Futura", sans-serif;
       font-size: 44px;
       font-weight: 800;
       text-transform: uppercase;
@@ -313,7 +313,7 @@ nav {
       display: block;
       width: 320px;
       margin: 0 auto;
-      font-family: "Yummo", "Yummo W01 Bold1444433", "Ubuntu Condensed", "Futura", sans-serif;
+      font-family: "Yummo W01 Bold1444433", "Ubuntu Condensed", "Futura", sans-serif;
       font-size: 44px;
       font-weight: 800;
       text-transform: lowercase;
@@ -537,12 +537,12 @@ article, .comment-area, .post-area, .comment-body {
   article .dropcap, .comment-area .dropcap, .post-area .dropcap, .comment-body .dropcap {
     float: left;
     color: #499948;
-    font-family: "Yummo", "Yummo W01 Bold1444433", "Ubuntu Condensed", "Futura", sans-serif;
+    font-family: "Yummo W01 Bold1444433", "Ubuntu Condensed", "Futura", sans-serif;
     font-weight: 800;
     text-transform: capitalize;
     font-size: 124px;
     line-height: 52px;
-    padding: 20px 4px 24px 0;
+    padding: 4px 4px 24px 0;
     display: inline-block;
     margin-left: -5.6px; }
   article a, .comment-area a, .post-area a, .comment-body a {
@@ -838,7 +838,7 @@ article, .comment-area, .post-area, .comment-body {
       height: auto;
       background: #6dac6e;
       color: #f8f9f7;
-      font-family: "Yummo", "Yummo W01 Bold1444433", "Ubuntu Condensed", "Futura", sans-serif;
+      font-family: "Yummo W01 Bold1444433", "Ubuntu Condensed", "Futura", sans-serif;
       font-size: 16px;
       font-weight: 800;
       text-transform: uppercase;
@@ -1261,7 +1261,7 @@ aside {
       -webkit-transition: -webkit-transform 0.3s, opacity 0.1s;
               transition: transform 0.3s, opacity 0.1s; }
   aside.articles .archive-link {
-    font-family: "Yummo", "Yummo W01 Bold1444433", "Ubuntu Condensed", "Futura", sans-serif;
+    font-family: "Yummo W01 Bold1444433", "Ubuntu Condensed", "Futura", sans-serif;
     font-size: 20px;
     font-weight: 800;
     text-transform: lowercase;
