@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Yummo W01 Bold1444433";
+  src: url("yummo/2979cad7-fb6a-4f90-ac4f-81abeb1db5ee.eot?#iefix");
+  src: url("yummo/2979cad7-fb6a-4f90-ac4f-81abeb1db5ee.eot?#iefix") format("eot"), url("yummo/50d72a03-c1fa-44ec-9ab6-0ee701e22fad.woff2") format("woff2"), url("yummo/66596749-cc45-4323-95d3-7d9068159531.woff") format("woff"), url("yummo/d0f10cb0-269b-469e-939e-83f9f74b1d8e.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal; }
 html, body {
   width: 100%;
   min-height: 100%;
@@ -70,12 +76,11 @@ picture, figure {
   -moz-filter: grayscale(100%);
   filter: gray;
   -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-  filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale"); }
+          filter: grayscale(100%); }
 
 .title {
   color: #499948;
-  font-family: "yummo", "Ubuntu Condensed", "Futura", sans-serif;
+  font-family: "Yummo", "Yummo W01 Bold1444433", "Ubuntu Condensed", "Futura", sans-serif;
   font-weight: 800;
   font-size: 32px;
   text-transform: uppercase;
@@ -169,7 +174,7 @@ picture, figure {
       -webkit-transform: scale(1.05) translateZ(0);
               transform: scale(1.05) translateZ(0); }
     .top-bar .nav-trigger .menu-text {
-      font-family: "yummo", "Ubuntu Condensed", "Futura", sans-serif;
+      font-family: "Yummo", "Yummo W01 Bold1444433", "Ubuntu Condensed", "Futura", sans-serif;
       font-size: 44px;
       font-weight: 800;
       text-transform: uppercase;
@@ -308,7 +313,7 @@ nav {
       display: block;
       width: 320px;
       margin: 0 auto;
-      font-family: "yummo", "Ubuntu Condensed", "Futura", sans-serif;
+      font-family: "Yummo", "Yummo W01 Bold1444433", "Ubuntu Condensed", "Futura", sans-serif;
       font-size: 44px;
       font-weight: 800;
       text-transform: lowercase;
