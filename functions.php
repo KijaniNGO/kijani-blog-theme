@@ -6,7 +6,7 @@
 /** */
 function get_image_generation_url($img_url, $img_title, $img_width) {
 
-    $imagerenderer = "http://kijani.co/imagerenderer/img.php";
+    $imagerenderer = "http://imagerenderer.kijani.co/img.php";
     $img_generation_url = "$imagerenderer?imgurl=$img_url&title=$img_title&width=$img_width&type=jpg&qual=80";
 
     return $img_generation_url;
